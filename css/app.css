@@ -1,0 +1,460 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #1f1e1e;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+:focus {
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+ul.list-inline {
+  display: flex;
+  align-items: center;
+}
+ul.list-inline > li {
+  margin-right: 10px;
+}
+
+#app {
+  height: 100vh;
+  margin: auto;
+}
+
+.img100 {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.contact-name {
+  font-size: 17px;
+}
+
+header {
+  display: flex;
+  height: 70px;
+  background: #EAEAEA;
+}
+header .header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  padding: 10px;
+  border-right: 1px solid #d1d1d1;
+}
+header .header-left .user-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+header .header-left .user-container .user-avatar {
+  width: 50px;
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+header .header-left .nav-buttons {
+  font-size: 18px;
+  color: #878282;
+}
+header .header-left .nav-buttons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+header .header-left .nav-buttons a:hover {
+  background: #d1d1d1;
+  color: #605d5d;
+}
+header .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 40%);
+}
+header .header-right #select-contact {
+  font-size: 20px;
+  padding: 10px;
+}
+header .header-right .active-contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding: 10px;
+}
+header .header-right .active-contact-container .active-contact-left {
+  display: flex;
+  align-items: center;
+}
+header .header-right .active-contact-container .active-contact-left .contact-avatar {
+  width: 50px;
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+header .header-right .active-contact-container .active-contact-right {
+  font-size: 18px;
+  color: #878282;
+  cursor: pointer;
+}
+header .header-right .nav-buttons {
+  font-size: 18px;
+  color: #878282;
+}
+header .header-right .nav-buttons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+header .header-right .nav-buttons a:hover {
+  background: #d1d1d1;
+  color: #605d5d;
+}
+
+main {
+  display: flex;
+  height: calc(100% - 70px);
+}
+main .main-left {
+  width: 40%;
+}
+main .main-left #desktop-notifications {
+  display: flex;
+  align-items: center;
+  height: calc(70px * 1.3);
+  background: #82d0f3;
+  padding: 10px;
+}
+main .main-left #desktop-notifications .notifications-left {
+  width: 55px;
+  height: 55px;
+  line-height: 60px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+main .main-left #desktop-notifications .notifications-left i {
+  color: #82d0f3;
+  font-size: 23px;
+}
+main .main-left #desktop-notifications .notifications-right a {
+  font-size: 15px;
+  text-decoration: underline;
+  color: #878282;
+  font-weight: 500;
+}
+main .main-left #search-contacts {
+  display: flex;
+  background: #EAEAEA;
+  padding: 10px;
+  height: 60px;
+}
+main .main-left #search-contacts .search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  color: #878282;
+  background: #fff;
+  border-right: 1px solid #d1d1d1;
+}
+main .main-left #search-contacts .search-input {
+  width: 80%;
+  height: 100%;
+  border: 0;
+  padding: 10px;
+  font-size: 15px;
+}
+main .main-left #contacts {
+  height: calc(100% - (60px + (70px * 1.3)));
+  background: #fff;
+  overflow-y: scroll;
+}
+main .main-left #contacts .contact {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 1px solid #d1d1d1;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+main .main-left #contacts .contact:hover {
+  background: #e6e6e6;
+}
+main .main-left #contacts .contact.contact-active {
+  background: #e6e6e6;
+}
+main .main-left #contacts .contact .contact-avatar {
+  width: 50px;
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+main .main-left #contacts .contact .contact-info .contact-last-message {
+  font-size: 14px;
+  color: #878282;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .main-left #contacts .contact .last-message-date {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  color: #878282;
+  font-size: 12px;
+}
+main .main-right {
+  width: calc(100% - 40%);
+}
+main .main-right .no-chats-opened {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-top: 30px;
+  background: #F8F9FB;
+}
+main .main-right .no-chats-opened img.device-img {
+  max-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+main .main-right .no-chats-opened h4 {
+  margin: 15px 0 10px;
+  font-size: 25px;
+  font-weight: 500;
+}
+main .main-right .no-chats-opened p {
+  color: #878282;
+  font-size: 15px;
+  width: 70%;
+  line-height: 20px;
+}
+main .main-right #chat {
+  height: 100%;
+}
+main .main-right #chat .chat-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: calc(100% - 70px);
+  padding: calc(10px * 1.5) 40px 0;
+  overflow-y: scroll;
+  background-color: #E5DDD5;
+  background-image: url("../img/bg-chat-tile-dark.png");
+}
+main .main-right #chat .chat-list li {
+  padding: 10px 10px calc(10px * 2);
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #fff;
+  min-width: 100px;
+  max-width: 260px;
+  word-wrap: break-word;
+  box-shadow: 5px 5px 6px -3px rgba(0, 0, 0, 0.48);
+  position: relative;
+}
+main .main-right #chat .chat-list li.sent {
+  align-self: flex-end;
+  background: #D5F9BA;
+}
+main .main-right #chat .chat-list li .date-message {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  color: #878282;
+  font-size: 11px;
+}
+main .main-right #chat .chat-list li .dropdown-message-btn {
+  position: absolute;
+  left: 5px;
+  bottom: 2px;
+  font-size: 11px;
+  color: #878282;
+  cursor: pointer;
+  display: none;
+}
+main .main-right #chat .chat-list li:hover > .dropdown-message-btn {
+  display: block;
+}
+main .main-right #chat .chat-list li .dropdown-message {
+  position: absolute;
+  left: 0;
+  bottom: -45px;
+  z-index: 1;
+}
+main .main-right #chat .chat-list li .dropdown-message li {
+  width: 150px;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+main .main-right #chat .chat-list li .dropdown-message li:hover {
+  background: #e6e6e6;
+}
+main .main-right #chat .chat-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background: #EAEAEA;
+}
+main .main-right #chat .chat-input-container aside {
+  text-align: center;
+  color: #878282;
+  width: 80px;
+  font-size: 23px;
+}
+main .main-right #chat .chat-input-container aside.emoji {
+  font-size: 18px;
+  color: #878282;
+  font-size: 23px;
+}
+main .main-right #chat .chat-input-container aside.emoji a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+main .main-right #chat .chat-input-container aside.emoji a:hover {
+  background: #d1d1d1;
+  color: #605d5d;
+}
+main .main-right #chat .chat-input-container .message-sender {
+  width: calc(100% - (80px * 2));
+  padding: 10px 0;
+  height: 100%;
+}
+main .main-right #chat .chat-input-container .message-sender .message-input {
+  height: 100%;
+  border: 0;
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#app.dark-mode {
+  color: #d6d1d1;
+}
+#app.dark-mode ::-moz-placeholder {
+  color: #d6d1d1;
+}
+#app.dark-mode :-ms-input-placeholder {
+  color: #d6d1d1;
+}
+#app.dark-mode ::placeholder {
+  color: #d6d1d1;
+}
+#app.dark-mode header {
+  background: #323739;
+}
+#app.dark-mode header .header-left {
+  border-right: 1px solid #7a868a;
+}
+#app.dark-mode main .main-left {
+  border-right: 1px solid #7a868a;
+}
+#app.dark-mode main .main-left #desktop-notifications {
+  background: #3e4447;
+}
+#app.dark-mode main .main-left #desktop-notifications .notifications-left {
+  background: #82d0f3;
+}
+#app.dark-mode main .main-left #desktop-notifications .notifications-left i {
+  color: #3e4447;
+}
+#app.dark-mode main .main-left #desktop-notifications .notifications-right p {
+  color: #d6d1d1;
+}
+#app.dark-mode main .main-left #search-contacts {
+  background: #131C21;
+}
+#app.dark-mode main .main-left #search-contacts .search-btn {
+  background: #323739;
+  border-right: 1px solid #7a868a;
+}
+#app.dark-mode main .main-left #search-contacts .search-input {
+  background: #323739;
+  font-weight: 500;
+  color: #d6d1d1;
+}
+#app.dark-mode main .main-left #contacts {
+  background: #131C21;
+}
+#app.dark-mode main .main-left #contacts .contact {
+  border-bottom: 1px solid #7a868a;
+}
+#app.dark-mode main .main-left #contacts .contact:hover {
+  background: #263741;
+}
+#app.dark-mode main .main-left #contacts .contact.contact-active {
+  background: #263741;
+}
+#app.dark-mode .main-right .no-chats-opened {
+  background: #3e4447;
+}
+#app.dark-mode .main-right #chat .chat-list {
+  background-color: #131C21;
+  background-image: url("../img/bg-chat-tile-light.png");
+}
+#app.dark-mode .main-right #chat .chat-list li {
+  background: #262D31;
+  color: #d6d1d1;
+}
+#app.dark-mode .main-right #chat .chat-list li.sent {
+  background: #056162;
+}
+#app.dark-mode .main-right #chat .chat-list li .dropdown-message-btn,
+#app.dark-mode .main-right #chat .chat-list li .date-message {
+  color: #beb6b6;
+}
+#app.dark-mode .main-right #chat .chat-list li .dropdown-message li:hover {
+  background: #4a5154;
+}
+#app.dark-mode .main-right #chat .chat-input-container {
+  background: #323739;
+}
+#app.dark-mode .main-right #chat .chat-input-container .message-input {
+  background: #3e4447;
+  color: #d6d1d1;
+}

@@ -1,0 +1,44 @@
+@mixin flex-btw {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-start {
+    display: flex;
+    align-items: center;
+}
+
+@mixin nav-btns {
+    font-size: $buttons_size;
+    color: $fontColorLighten;
+
+    & a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        transition: all $transitions_time;
+
+        &:hover {
+            background: darken($greyColor, 10%);
+            color: darken($fontColorLighten, 15%);
+        }
+    }
+}
+
+@mixin avatars {
+    width: $avatars_img;
+    margin-right: $avatars_margin;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@mixin inputs {
+    height: 100%;
+    border: 0;
+    padding: $padding;
+    font-size: 15px;
+}

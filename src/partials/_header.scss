@@ -1,0 +1,62 @@
+header {
+    display: flex;
+    height: $header_height;
+    background: $greyColor;
+
+    .header-left {
+        @include flex-btw;
+        width: $leftSideWidth;
+        padding: $padding;
+        border-right: $borders;
+
+        .user-container {
+            @include flex-start;
+            font-size: 16px;
+
+            .user-avatar {
+                @include avatars;
+            }
+        }
+
+        .nav-buttons {
+            @include nav-btns;
+        }
+
+    }
+
+    .header-right {
+        @include flex-btw;
+        width: $rightSideWidth;
+
+        #select-contact {
+            font-size: 20px;
+            padding: $padding;
+        }
+
+        .active-contact-container {
+            @include flex-btw;
+            width: 60%;
+            padding: $padding;
+
+            .active-contact-left {
+                @include flex-start;
+
+                .contact-avatar {
+                    @include avatars;
+                }
+
+            }
+
+            .active-contact-right {
+                font-size: $buttons_size;
+                color: $fontColorLighten;
+                cursor: pointer;
+            }
+        }
+
+        .nav-buttons {
+            @include nav-btns;
+        }
+    }
+
+}

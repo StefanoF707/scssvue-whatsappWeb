@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $fontColor;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+:focus {
+    outline: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+ul.list-inline {
+    @include flex-start;
+    & > li {
+        margin-right: $buttons_margin;
+    }
+}
+
+#app {
+    height: 100vh;
+    margin: auto;
+}
+
+.img100 {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.contact-name {
+    font-size: 17px;
+}

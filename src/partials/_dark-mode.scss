@@ -1,0 +1,116 @@
+#app.dark-mode {
+    ::placeholder {
+        color: $dm_fontColor;
+    }
+    color: $dm_fontColor;
+
+    header {
+        background: $dm_greyColor;
+
+        .header-left {
+            border-right: $dm_borders;
+        }
+    }
+
+    main {
+
+        .main-left {
+            border-right: $dm_borders;
+
+            #desktop-notifications {
+                background: lighten($dm_greyColor, 5%);
+
+                .notifications-left {
+                    background: #82d0f3;
+                    
+                    i {
+                        color: lighten($dm_greyColor, 5%);
+                    }
+                }
+
+                .notifications-right {
+                    p {
+                        color: $dm_fontColor;
+                    }
+                }
+
+            }
+
+            #search-contacts {
+                background: $dm_darkerColor;
+
+                .search-btn {
+                    background: $dm_greyColor;
+                    border-right: $dm_borders;
+                }
+
+                .search-input {
+                    background: $dm_greyColor;
+                    font-weight: 500;
+                    color: $dm_fontColor;
+                }
+            }
+
+            #contacts {
+                background: $dm_darkerColor;
+                .contact {
+                    border-bottom: $dm_borders;
+
+                    &:hover {
+                        background: lighten($dm_darkerColor, 10%);
+                    }
+
+                    &.contact-active {
+                        background: lighten($dm_darkerColor, 10%);
+                    }
+                }
+            }
+        }
+
+    }
+
+    .main-right {
+        .no-chats-opened {
+            background: lighten($dm_greyColor, 5%);
+        }
+        #chat {
+
+            .chat-list {
+                background-color: $dm_darkerColor;
+                background-image: url('../img/bg-chat-tile-light.png');
+                li {
+                    background: $dm_receivedMessageColor;
+                    color: $dm_fontColor;
+
+                    &.sent {
+                        background: $dm_sentMessageColor;
+                    }
+
+                    .dropdown-message-btn,
+                    .date-message {
+                        color: darken($dm_fontColor, 10%);
+                    }
+
+                    .dropdown-message {
+                        li {
+                            &:hover {
+                                background: lighten($dm_greyColor, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chat-input-container {
+                background: $dm_greyColor;
+
+                .message-input {
+                    background: lighten($dm_greyColor, 5%);
+                    color: $dm_fontColor;
+                }
+            }
+        }
+
+    }
+
+}
