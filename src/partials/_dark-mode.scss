@@ -2,6 +2,12 @@
     ::placeholder {
         color: $dm_fontColor;
     }
+
+    ::-webkit-scrollbar-thumb
+    {
+       background-color: $dm_scrollbarsColor;
+    }
+
     color: $dm_fontColor;
 
     header {
@@ -22,7 +28,7 @@
 
                 .notifications-left {
                     background: #82d0f3;
-                    
+
                     i {
                         color: lighten($dm_greyColor, 5%);
                     }

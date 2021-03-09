@@ -9,6 +9,19 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+::-webkit-scrollbar
+{
+   width: 6px;
+   margin-right: 2px;
+}
+
+::-webkit-scrollbar-thumb
+{
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+   background-color: $scrollbarsColor;
+}
+
 :focus {
     outline: 0;
 }

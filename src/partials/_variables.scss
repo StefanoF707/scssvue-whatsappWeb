@@ -1,32 +1,37 @@
-//DARK-MODE
+// Colors
+$greenColor: #009688;
+$greyColor: #EAEAEA;
+$fontColor: #1f1e1e;
+$receivedMessageColor: #fff;
+$sentMessageColor: #D5F9BA;
+$fontColorLighten: lighten($fontColor, 40%);
+$borders: 1px solid darken($greyColor, 10%);
+$scrollbarsColor: #46C055;
+// /Colors
+
+// Sizes
+$leftSideWidth: 40%;
+$rightSideWidth: calc(100% - #{$leftSideWidth});
+$avatars_img: 50px;
+$buttons_size: 18px;
+$header_height: 70px;
+$main_height: calc(100% - #{$header_height});
+// /Sizes
+
+// Others
+$padding: 10px;
+$buttons_margin: 10px;
+$avatars_margin: 15px;
+$transitions_time: 0.4s;
+$chatControllerBtns: 80px;
+// /Others
+
+// Dark-mode variables
 $dm_fontColor: #d6d1d1;
 $dm_greyColor: #323739;
 $dm_darkerColor: #131C21;
 $dm_borders: 1px solid lighten($dm_greyColor, 30%);
 $dm_receivedMessageColor: #262D31;
 $dm_sentMessageColor: #056162;
-
-$greenColor: #009688;
-$greyColor: #EAEAEA;
-$padding: 10px;
-$leftSideWidth: 40%;
-$rightSideWidth: calc(100% - #{$leftSideWidth});
-$fontColor: #1f1e1e;
-$fontColorLighten: lighten($fontColor, 40%);
-$avatars_img: 50px;
-$avatars_margin: 15px;
-
-$buttons_margin: 10px;
-$buttons_size: 18px;
-
-$transitions_time: 0.4s;
-
-$header_height: 70px;
-$main_height: calc(100% - #{$header_height});
-
-$borders: 1px solid darken($greyColor, 10%);
-
-$chatControllerBtns: 80px;
-
-$receivedMessageColor: #fff;
-$sentMessageColor: #D5F9BA;
+$dm_scrollbarsColor: #056162;
+// /Dark-mode variables

@@ -10,6 +10,17 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #46C055;
+}
+
 :focus {
   outline: 0;
 }
@@ -112,6 +123,10 @@ header .header-right .active-contact-container .active-contact-left .contact-ava
   margin-right: 15px;
   border-radius: 50%;
   overflow: hidden;
+}
+header .header-right .active-contact-container .active-contact-left .contact-info .last-access {
+  color: #878282;
+  font-size: 15px;
 }
 header .header-right .active-contact-container .active-contact-right {
   font-size: 18px;
@@ -384,6 +399,9 @@ main .main-right #chat .chat-input-container .message-sender .message-input {
 }
 #app.dark-mode ::placeholder {
   color: #d6d1d1;
+}
+#app.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #056162;
 }
 #app.dark-mode header {
   background: #323739;

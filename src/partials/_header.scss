@@ -45,6 +45,15 @@ header {
                     @include avatars;
                 }
 
+                .contact-info {
+
+                    .last-access {
+                        color: $fontColorLighten;
+                        font-size: 15px;
+                    }
+
+                }
+
             }
 
             .active-contact-right {

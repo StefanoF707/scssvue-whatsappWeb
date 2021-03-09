@@ -24,7 +24,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     contacts: [{
       name: 'Michele',
       avatar: 'michele-avatar.webp',
-      visible: true,
+      lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
       messages: [{
         date: '15:30',
         text: 'Hai portato a spasso il cane?',
@@ -44,7 +44,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }, {
       name: 'Fabio',
       avatar: 'fabio-avatar.png',
-      visible: true,
+      lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
       messages: [{
         date: '16:30',
         text: 'Ciao come stai?',
@@ -64,7 +64,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }, {
       name: 'Samuele',
       avatar: 'samuele-avatar.png',
-      visible: true,
+      lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
       messages: [{
         date: '10:10',
         text: 'La Marianna va in campagna',
@@ -84,7 +84,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }, {
       name: 'Luisa',
       avatar: 'luisa-avatar.png',
-      visible: true,
+      lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
       messages: [{
         date: '15:30',
         text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -100,7 +100,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     searchInput: "",
     messageInput: "",
     indexActive: -1,
-    darkMode: true
+    darkMode: false
   },
   methods: {
     chatCloser: function chatCloser() {
@@ -119,6 +119,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     deleteMessage: function deleteMessage(index) {
       var contact = this.indexActive;
       this.contacts[contact].messages.splice(index, 1);
+    },
+    autoScrollToEnd: function autoScrollToEnd() {
+      var container = document.querySelector('.chat-list');
+      var scrollHeight = container.scrollHeight;
+      container.scrollTop = scrollHeight;
     },
     messageSender: function messageSender() {
       var _this = this;
@@ -143,6 +148,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         }, 2000);
       }
     }
+  },
+  mounted: function mounted() {
+    this.autoScrollToEnd();
+  },
+  updated: function updated() {
+    this.autoScrollToEnd();
   }
 });
 

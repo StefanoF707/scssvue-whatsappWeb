@@ -12,7 +12,7 @@ let app = new Vue({
             {
                 name: 'Michele',
                 avatar: 'michele-avatar.webp',
-                visible: true,
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
                 messages: [
                     {
                         date: '15:30',
@@ -37,7 +37,7 @@ let app = new Vue({
             {
                 name: 'Fabio',
                 avatar: 'fabio-avatar.png',
-                visible: true,
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
                 messages: [
                     {
                         date: '16:30',
@@ -62,7 +62,7 @@ let app = new Vue({
             {
                 name: 'Samuele',
                 avatar: 'samuele-avatar.png',
-                visible: true,
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
                 messages: [
                     {
                         date: '10:10',
@@ -87,7 +87,7 @@ let app = new Vue({
             {
                 name: 'Luisa',
                 avatar: 'luisa-avatar.png',
-                visible: true,
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
                 messages: [
                     {
                         date: '15:30',
@@ -107,7 +107,7 @@ let app = new Vue({
         searchInput: "",
         messageInput: "",
         indexActive: -1,
-        darkMode: true,
+        darkMode: false,
     },
     methods: {
         chatCloser() {
@@ -134,6 +134,12 @@ let app = new Vue({
             this.contacts[contact].messages.splice(index, 1);
         },
 
+        autoScrollToEnd() {
+            let container = document.querySelector('.chat-list');
+            let scrollHeight = container.scrollHeight;
+            container.scrollTop = scrollHeight;
+        },
+
         messageSender() {
             const contact = this.indexActive;
             if (this.messageInput != "") {
@@ -157,4 +163,10 @@ let app = new Vue({
             }
         }
     },
+    mounted() {
+        this.autoScrollToEnd();
+    },
+    updated() {
+        this.autoScrollToEnd();
+    }
 });
