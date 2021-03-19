@@ -20,6 +20,20 @@ header {
 
         .nav-buttons {
             @include nav-btns;
+
+            .dark-mode-btn {
+                position: relative;
+                .fas.fa-hand-pointer {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%);
+                    font-size: 25px;
+                    color: $sentMessageColor;
+                    text-shadow: 2px 0 0 $fontColor, -2px 0 0 $fontColor, 0 2px 0 $fontColor, 0 -2px 0 $fontColor, 1px 1px $fontColor, -1px -1px 0 $fontColor, 1px -1px 0 $fontColor, -1px 1px 0 $fontColor;
+                    animation: dm-cursor calc(#{$transitions_time} * 3) infinite;
+                }
+            }
         }
 
     }

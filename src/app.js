@@ -5,7 +5,7 @@ let app = new Vue({
     el: "#root",
     data: {
         user: {
-            name: "Nome Utente",
+            name: "Stefano",
             avatar: "user-avatar.png"
         },
         contacts: [
@@ -103,6 +103,99 @@ let app = new Vue({
                     }
                 ],
             },
+            {
+                name: 'Alessia',
+                avatar: 'alessia-avatar.jpg',
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
+                messages: [
+                    {
+                        date: '11:30',
+                        text: 'Ti va un caffè più tardi?',
+                        status: 'received',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '11:50',
+                        text: 'Certo!',
+                        status: 'sent',
+                        dropdownMenu: false
+                    }
+                ],
+            },
+            {
+                name: 'Alberto',
+                avatar: 'alberto-avatar.png',
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
+                messages: [
+                    {
+                        date: '21:21',
+                        text: 'Hey, mi servirebbe un favore più tardi',
+                        status: 'received',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:22',
+                        text: 'Puoi aiutarmi?',
+                        status: 'received',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:25',
+                        text: 'Mi spiace, ho già un impegno',
+                        status: 'sent',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:25',
+                        text: 'Sarà per la prossima',
+                        status: 'sent',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:27',
+                        text: 'Va bene',
+                        status: 'received',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:27',
+                        text: 'Non preoccuparti',
+                        status: 'received',
+                        dropdownMenu: false
+                    }
+                ],
+            },
+            {
+                name: 'Laura',
+                avatar: 'laura-avatar.jpg',
+                lastAccess: dayjs().format("HH:mm [del] DD-MM-YYYY"),
+                messages: [
+                    {
+                        date: '19:54',
+                        text: 'Ho comprato i biglietti per il concerto',
+                        status: 'sent',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:11',
+                        text: 'Passo a prenderti domani alle 16',
+                        status: 'sent',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:12',
+                        text: 'Ci sei?',
+                        status: 'sent',
+                        dropdownMenu: false
+                    },
+                    {
+                        date: '21:12',
+                        text: 'Va benissimo!',
+                        status: 'received',
+                        dropdownMenu: false
+                    },
+                ],
+            },
         ],
         searchInput: "",
         messageInput: "",
@@ -155,16 +248,13 @@ let app = new Vue({
                 setTimeout( () => {
                     this.contacts[contact].messages.push({
                         date: dayjs().format("HH:mm"),
-                        text: "Ok!",
+                        text: this.contacts[contact].name,
                         status: 'received',
                         dropdownMenu: false
                     })
                 }, 2000);
             }
         }
-    },
-    mounted() {
-        this.autoScrollToEnd();
     },
     updated() {
         this.autoScrollToEnd();

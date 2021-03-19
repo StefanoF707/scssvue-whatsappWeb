@@ -114,10 +114,10 @@ main {
         .no-chats-opened {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             height: 100%;
             text-align: center;
-            padding-top: 30px;
             background: #F8F9FB;
 
             img.device-img {
