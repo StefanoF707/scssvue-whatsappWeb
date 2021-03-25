@@ -141,13 +141,13 @@ let app = new Vue({
                     },
                     {
                         date: '21:25',
-                        text: 'Mi spiace, ho già un impegno',
+                        text: 'Mi spiace, ora sono impegnato.',
                         status: 'sent',
                         dropdownMenu: false
                     },
                     {
                         date: '21:25',
-                        text: 'Sarà per la prossima',
+                        text: 'Contattami più tardi',
                         status: 'sent',
                         dropdownMenu: false
                     },
@@ -201,6 +201,7 @@ let app = new Vue({
         messageInput: "",
         indexActive: -1,
         darkMode: false,
+        newMessage: false,
     },
     methods: {
         chatCloser() {
@@ -211,14 +212,23 @@ let app = new Vue({
             this.indexActive = index;
         },
 
-        messageDropdown(index) {
+        dropdownCloser() {
             const contact = this.indexActive;
 
             this.contacts[contact].messages.forEach( (message) => {
                 message.dropdownMenu = false;
             } );
+        },
 
-            this.contacts[contact].messages[index].dropdownMenu = true;
+        messageDropdown(index) {
+
+            const contact = this.indexActive;
+
+            this.dropdownCloser();
+
+            if (!this.contacts[contact].messages[index].dropdownMenu) {
+                this.contacts[contact].messages[index].dropdownMenu = true;
+            }
         },
 
         deleteMessage(index) {
@@ -228,9 +238,14 @@ let app = new Vue({
         },
 
         autoScrollToEnd() {
-            let container = document.querySelector('.chat-list');
-            let scrollHeight = container.scrollHeight;
-            container.scrollTop = scrollHeight;
+
+            if (this.newMessage) {
+                let container = document.querySelector('.chat-list');
+                let scrollHeight = container.scrollHeight;
+                container.scrollTop = scrollHeight;
+                
+                this.newMessage = false;
+            }
         },
 
         messageSender() {
@@ -248,12 +263,14 @@ let app = new Vue({
                 setTimeout( () => {
                     this.contacts[contact].messages.push({
                         date: dayjs().format("HH:mm"),
-                        text: this.contacts[contact].name,
-                        status: 'received',
+                        text: 'Perfetto',
                         dropdownMenu: false
                     })
+                    this.newMessage = true;
                 }, 2000);
             }
+
+            this.newMessage = true;
         }
     },
     updated() {

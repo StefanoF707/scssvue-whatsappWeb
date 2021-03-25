@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <script src="https://kit.fontawesome.com/b954c4656e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/app.css">
     <title>WhatsApp Web</title>
 </head>
@@ -155,7 +155,7 @@
                     <template v-else>
                         <section id="chat">
                             <ul class="chat-list">
-                                <li v-for="(message, index) in contacts[indexActive].messages" :class="(message.status == 'sent') ? message.status : ''">
+                                <li v-for="(message, index) in contacts[indexActive].messages" :class="(message.status == 'sent') ? message.status : ''" v-on:mouseleave="dropdownCloser">
                                     <p>{{ message.text }}</p>
                                     <span class="date-message">{{ message.date }}</span>
 
@@ -166,7 +166,7 @@
                                     <!-- DROPDOWN DEL SINGOLO MESSAGGIO CHE SI APRE AL CLICK SULLA FRECCIA PER LA CANCELLAZIONE DEL MESSAGGIO -->
                                     <template v-if="message.dropdownMenu">
                                         <ul class="dropdown-message">
-                                            <li @click="deleteMessage(index)">Cancella messaggio</li>
+                                            <li @click="deleteMessage(index)">Cancella</li>
                                         </ul>
                                     </template>
                                     <!-- /DROPDOWN DEL SINGOLO MESSAGGIO CHE SI APRE AL CLICK SULLA FRECCIA PER LA CANCELLAZIONE DEL MESSAGGIO-->

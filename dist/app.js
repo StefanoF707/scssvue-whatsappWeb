@@ -127,12 +127,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         dropdownMenu: false
       }, {
         date: '21:25',
-        text: 'Mi spiace, ho già un impegno',
+        text: 'Mi spiace, ora sono impegnato.',
         status: 'sent',
         dropdownMenu: false
       }, {
         date: '21:25',
-        text: 'Sarà per la prossima',
+        text: 'Contattami più tardi',
         status: 'sent',
         dropdownMenu: false
       }, {
@@ -175,7 +175,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     searchInput: "",
     messageInput: "",
     indexActive: -1,
-    darkMode: false
+    darkMode: false,
+    newMessage: false
   },
   methods: {
     chatCloser: function chatCloser() {
@@ -184,21 +185,31 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     chatSelector: function chatSelector(index) {
       this.indexActive = index;
     },
-    messageDropdown: function messageDropdown(index) {
+    dropdownCloser: function dropdownCloser() {
       var contact = this.indexActive;
       this.contacts[contact].messages.forEach(function (message) {
         message.dropdownMenu = false;
       });
-      this.contacts[contact].messages[index].dropdownMenu = true;
+    },
+    messageDropdown: function messageDropdown(index) {
+      var contact = this.indexActive;
+      this.dropdownCloser();
+
+      if (!this.contacts[contact].messages[index].dropdownMenu) {
+        this.contacts[contact].messages[index].dropdownMenu = true;
+      }
     },
     deleteMessage: function deleteMessage(index) {
       var contact = this.indexActive;
       this.contacts[contact].messages.splice(index, 1);
     },
     autoScrollToEnd: function autoScrollToEnd() {
-      var container = document.querySelector('.chat-list');
-      var scrollHeight = container.scrollHeight;
-      container.scrollTop = scrollHeight;
+      if (this.newMessage) {
+        var container = document.querySelector('.chat-list');
+        var scrollHeight = container.scrollHeight;
+        container.scrollTop = scrollHeight;
+        this.newMessage = false;
+      }
     },
     messageSender: function messageSender() {
       var _this = this;
@@ -216,12 +227,15 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         setTimeout(function () {
           _this.contacts[contact].messages.push({
             date: dayjs().format("HH:mm"),
-            text: _this.contacts[contact].name,
-            status: 'received',
+            text: 'Perfetto',
             dropdownMenu: false
           });
+
+          _this.newMessage = true;
         }, 2000);
       }
+
+      this.newMessage = true;
     }
   },
   updated: function updated() {

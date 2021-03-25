@@ -160,7 +160,7 @@ main {
                     margin-bottom: 10px;
                     border-radius: 12px;
                     background: $receivedMessageColor;
-                    min-width: 100px;
+                    min-width: 130px;
                     max-width: 260px;
                     word-wrap: break-word;
                     box-shadow: 5px 5px 6px -3px rgba(0,0,0,0.48);
@@ -196,12 +196,14 @@ main {
 
                     .dropdown-message {
                         position: absolute;
+                        top: 100%;
                         left: 0;
                         bottom: -45px;
                         z-index: 1;
                          li {
-                             width: 150px;
-                             border-radius: 0;
+                             width: 100px;
+                             font-size: 14px;
+                             background: darken(#fff, 5%);
                              box-shadow: none;
                              padding: $padding;
                              cursor: pointer;
