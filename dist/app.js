@@ -137,12 +137,27 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         dropdownMenu: false
       }, {
         date: '21:27',
-        text: 'Va bene',
+        text: 'Non preoccuparti',
         status: 'received',
         dropdownMenu: false
       }, {
         date: '21:27',
-        text: 'Non preoccuparti',
+        text: 'Per che ora pensi di liberarti?',
+        status: 'received',
+        dropdownMenu: false
+      }, {
+        date: '21:28',
+        text: 'Ti scrivo io appena posso',
+        status: 'sent',
+        dropdownMenu: false
+      }, {
+        date: '21:29',
+        text: 'Ok',
+        status: 'received',
+        dropdownMenu: false
+      }, {
+        date: '21:29',
+        text: 'A dopo!',
         status: 'received',
         dropdownMenu: false
       }]

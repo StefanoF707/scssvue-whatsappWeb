@@ -39,7 +39,7 @@
                                     <i v-if="!darkMode" class="fas fa-moon"></i>
                                     <i v-else class="fas fa-sun"></i>
                                 </a>
-                                <i class="fas fa-hand-pointer"></i>
+                                <!-- <i class="fas fa-hand-pointer"></i> -->
                             </li>
                             <li>
                                 <a href="#"><i class="fas fa-ellipsis-v"></i></a>
@@ -113,8 +113,11 @@
                     </section>
 
                     <!-- GESTIRE RICERCA CONTATTI CON V-MODEL E BUTTON -->
-                    <section id="search-contacts">
-                        <div class="search-btn"><i class="fas fa-search"></i></div>
+                    <section id="search-contacts"  @click="searchInput = ''">
+                        <div class="search-btn">
+                            <i v-if="searchInput == ''" class="fas fa-search"></i>
+                            <i v-else class="fas fa-times"></i>
+                        </div>
                         <input type="text" v-model="searchInput" placeholder="Cerca un contatto" class="search-input">
                     </section>
                     <!-- /GESTIRE RICERCA CONTATTI CON V-MODEL E BUTTON -->
